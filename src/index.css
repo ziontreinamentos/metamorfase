@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", "Playfair Display", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #141414;
+  --color-bg-card: #1c1c1c;
+  --color-bg-card-elevated: #242220;
+  --color-border-subtle: #2a2a2a;
+  --color-border-highlight: #e8823c66;
+
+  --color-bg-light: #f5f1ea;
+  --color-bg-light-card: #ffffff;
+  --color-text-on-light: #1a1a1a;
+  --color-text-on-light-muted: #5c5850;
+
+  --color-accent-primary: #e8823c;
+  --color-accent-light: #f5a05c;
+
+  --color-cta-green: #2fbf6d;
+  --color-cta-green-hover: #27a75e;
+  --color-cta-text: #0a0a0a;
+
+  --color-semantic-negative: #e85c4a;
+  --color-semantic-positive: #2fbf6d;
+
+  --color-text-primary: #f5f3f0;
+  --color-text-secondary: #a8a49c;
+  --color-text-muted: #6e6a62;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-primary);
+    color: var(--color-bg-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-light);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent-primary);
+  }
+}
