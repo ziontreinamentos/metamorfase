@@ -1,5 +1,6 @@
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
+import TopoTexture from "./TopoTexture";
 
 const items = [
   "Você sabe que consegue entregar muito mais do que entrega hoje.",
@@ -10,8 +11,9 @@ const items = [
 
 export default function Diagnosis() {
   return (
-    <section className="bg-bg-primary py-16 md:py-28">
-      <Container>
+    <section className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative">
         <Eyebrow>O Diagnóstico</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           O problema nunca foi falta de potencial.
@@ -23,13 +25,13 @@ export default function Diagnosis() {
           produzindo sempre os mesmos resultados.
         </p>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-14">
+        <div className="mt-14 divide-y divide-border-subtle border-t border-border-subtle">
           {items.map((text, i) => (
-            <div key={i} className="flex gap-5">
-              <span className="font-serif text-[40px] leading-none text-accent-primary md:text-[52px]">
+            <div key={i} className="flex gap-5 py-8 md:gap-8">
+              <span className="font-serif text-[36px] leading-none text-accent-primary md:text-[48px]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <p className="pt-2 text-[16px] leading-[1.6] text-text-primary md:text-[17px]">
+              <p className="pt-1 text-[16px] leading-[1.6] text-text-primary md:pt-2 md:text-[18px]">
                 {text}
               </p>
             </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Container from "./Container";
 import Button from "./Button";
-import { MountainIcon } from "./Icons";
+import { LogoFull } from "./Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,16 +19,8 @@ export default function Header() {
       }`}
     >
       <Container className="flex items-center justify-between py-4">
-        <a href="#topo" className="flex items-center gap-3">
-          <MountainIcon className="h-8 w-8 text-accent-primary" />
-          <div className="leading-tight">
-            <div className="font-sans text-sm font-semibold tracking-[0.18em] text-text-primary">
-              METAMORFASE
-            </div>
-            <div className="hidden text-[10px] tracking-[0.12em] text-text-secondary sm:block">
-              O PRÓXIMO NÍVEL COMEÇA AQUI
-            </div>
-          </div>
+        <a href="#topo" className="flex items-center">
+          <LogoFull className="h-8 md:h-9" />
         </a>
         <Button href="#precos" size="sm">
           Garantir vaga

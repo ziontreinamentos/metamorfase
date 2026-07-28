@@ -3,6 +3,7 @@
 @theme {
   --font-serif: "Fraunces", "Playfair Display", serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --color-bg-primary: #0a0a0a;
   --color-bg-secondary: #141414;
@@ -56,11 +57,20 @@
 
 @layer utilities {
   .eyebrow {
-    font-family: var(--font-sans);
-    font-weight: 600;
+    font-family: var(--font-mono);
+    font-weight: 500;
     font-size: 13px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--color-accent-primary);
+  }
+
+  .mono-label {
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+  }
+
+  .eyebrow-on-light {
+    color: var(--color-text-on-light-muted);
   }
 }

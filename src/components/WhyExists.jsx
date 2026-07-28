@@ -1,11 +1,13 @@
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
-import Avatar from "./Avatar";
+import diegoPhoto from "../assets/diego-photo.jpg";
+import TopoTexture from "./TopoTexture";
 
 export default function WhyExists() {
   return (
-    <section className="bg-bg-secondary py-16 md:py-28">
-      <Container className="max-w-3xl">
+    <section className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative max-w-3xl">
         <Eyebrow>Por que o Metamorfase existe</Eyebrow>
         <h2 className="mt-6 font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           Eu também vivi essa distância.
@@ -17,13 +19,7 @@ export default function WhyExists() {
           prática real.
         </p>
 
-        <blockquote className="relative mt-10 border-l-2 border-accent-primary/60 pl-6 md:pl-8">
-          <span
-            className="absolute -left-1 -top-6 font-serif text-6xl text-accent-primary/40 md:text-7xl"
-            aria-hidden="true"
-          >
-            “
-          </span>
+        <blockquote className="mt-10 border-l-4 border-accent-primary pl-6 md:pl-8">
           <p className="font-serif text-[20px] italic leading-[1.4] text-text-primary md:text-[26px]">
             Só entendi quando enxerguei o padrão invisível que sustentava
             tudo. Rompi ele. E, a partir dali, reconstruí quase tudo.
@@ -38,12 +34,16 @@ export default function WhyExists() {
         </p>
 
         <div className="mt-12 flex items-center gap-4">
-          <Avatar className="h-16 w-16 rounded-2xl object-cover md:h-20 md:w-20" />
+          <img
+            src={diegoPhoto}
+            alt="Diego Corrêa"
+            className="h-16 w-16 rounded-2xl object-cover object-top md:h-20 md:w-20"
+          />
           <div>
             <p className="font-serif text-[18px] font-medium text-text-primary md:text-[20px]">
               Diego Corrêa
             </p>
-            <p className="mt-1 text-[12px] font-medium uppercase tracking-[0.08em] text-text-secondary">
+            <p className="mono-label mt-1 text-[12px] uppercase text-text-secondary">
               Criador do Metamorfase · +1.500 pessoas atendidas
             </p>
           </div>

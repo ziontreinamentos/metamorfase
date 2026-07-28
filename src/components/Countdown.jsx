@@ -29,21 +29,17 @@ export default function Countdown() {
 
   return (
     <div className="flex justify-center gap-3 md:gap-4">
-      {units.map((unit, i) => (
-        <div key={unit.label} className="flex items-center gap-3 md:gap-4">
-          <div className="flex w-[72px] flex-col items-center rounded-xl border border-border-subtle bg-bg-card py-4 md:w-[88px] md:py-5">
-            <span className="font-serif text-[32px] leading-none text-accent-primary md:text-[40px]">
-              {String(unit.value).padStart(2, "0")}
-            </span>
-            <span className="mt-2 text-[11px] font-medium uppercase tracking-[0.1em] text-text-secondary">
-              {unit.label}
-            </span>
-          </div>
-          {i < units.length - 1 && (
-            <span className="hidden font-serif text-2xl text-text-muted sm:block" aria-hidden="true">
-              :
-            </span>
-          )}
+      {units.map((unit) => (
+        <div
+          key={unit.label}
+          className="flex w-[72px] flex-col items-center rounded-xl border border-border-subtle bg-bg-card py-4 md:w-[88px] md:py-5"
+        >
+          <span className="font-serif text-[32px] leading-none text-accent-primary md:text-[40px]">
+            {String(unit.value).padStart(2, "0")}
+          </span>
+          <span className="mono-label mt-2 text-[11px] uppercase text-text-secondary">
+            {unit.label}
+          </span>
         </div>
       ))}
     </div>

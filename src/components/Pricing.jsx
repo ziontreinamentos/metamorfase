@@ -2,12 +2,15 @@ import Container from "./Container";
 import Eyebrow from "./Eyebrow";
 import Button from "./Button";
 import { CheckIcon } from "./Icons";
+import TopoTexture from "./TopoTexture";
 
 const plans = [
   {
-    title: "Inscrição individual — Sua escalada",
+    tag: "Inscrição individual",
+    title: "Sua escalada",
     oldPrice: "De R$ 5.997",
-    newPrice: "12x de R$ 297",
+    installment: "12x de",
+    price: "R$ 297",
     features: [
       "3 dias completos de imersão",
       "Mais de 35 dinâmicas práticas",
@@ -16,12 +19,15 @@ const plans = [
     ],
     cta: "Quero começar minha escalada →",
     highlighted: false,
+    checkColor: "text-semantic-positive",
   },
   {
-    title: "Inscrição em dupla — Escalem juntos",
+    tag: "Inscrição em dupla",
+    title: "Escalem juntos",
     badge: "Mais escolhido",
     oldPrice: "De R$ 11.997",
-    newPrice: "12x de R$ 497",
+    installment: "12x de",
+    price: "R$ 497",
     features: [
       "2 vagas: leve quem também precisa escalar com você",
       "Mais de 35 dinâmicas práticas para os dois",
@@ -30,17 +36,19 @@ const plans = [
     ],
     cta: "Escalar em dupla →",
     highlighted: true,
+    checkColor: "text-accent-primary",
   },
 ];
 
 export default function Pricing() {
   return (
-    <section id="precos" className="bg-bg-primary py-16 md:py-28">
-      <Container>
+    <section id="precos" className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative">
         <Eyebrow>Sua vaga na escalada</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           A única decisão que separa você da sua próxima versão é{" "}
-          <em className="italic">decidir começar</em>.
+          <em className="italic text-accent-primary">decidir começar</em>.
         </h2>
         <p className="mt-6 max-w-2xl text-[16px] leading-[1.6] text-text-secondary md:text-[18px]">
           28, 29 e 30 de agosto · Guararema, SP. Lote de lançamento, com vagas
@@ -57,31 +65,37 @@ export default function Pricing() {
                   : "border border-border-subtle bg-bg-card"
               }`}
             >
-              {plan.badge && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-accent-primary px-4 py-1.5 text-[12px] font-semibold uppercase tracking-[0.08em] text-bg-primary">
-                  {plan.badge}
-                </span>
-              )}
+              <div className="flex items-center justify-between gap-3">
+                <p className="eyebrow">{plan.tag}</p>
+                {plan.badge && (
+                  <span className="mono-label shrink-0 rounded-full bg-cta-green px-3 py-1 text-[11px] font-semibold uppercase text-cta-text">
+                    {plan.badge}
+                  </span>
+                )}
+              </div>
 
-              <h3 className="font-serif text-[24px] font-medium leading-[1.2] text-text-primary md:text-[26px]">
+              <h3 className="mt-3 font-serif text-[24px] font-medium leading-[1.2] text-text-primary md:text-[26px]">
                 {plan.title}
               </h3>
 
               <div className="mt-6">
-                <p className="text-[14px] text-text-muted line-through">
+                <p className="mono-label text-[13px] text-text-muted line-through">
                   {plan.oldPrice}
                 </p>
-                <p className="mt-1 font-serif text-[30px] font-medium text-text-primary md:text-[34px]">
-                  {plan.newPrice}
+                <p className="mt-1 flex items-baseline gap-3">
+                  <span className="mono-label text-[13px] uppercase text-text-secondary">
+                    {plan.installment}
+                  </span>
+                  <span className="font-serif text-[32px] font-medium text-cta-green [text-shadow:0_0_20px_rgba(47,191,109,0.55)] md:text-[36px]">
+                    {plan.price}
+                  </span>
                 </p>
               </div>
 
               <ul className="mt-8 space-y-4">
                 {plan.features.map((text) => (
                   <li key={text} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-semantic-positive/15 text-semantic-positive">
-                      <CheckIcon className="h-3 w-3" />
-                    </span>
+                    <CheckIcon className={`mt-1 h-3.5 w-3.5 shrink-0 ${plan.checkColor}`} />
                     <span className="text-[15px] leading-[1.6] text-text-secondary">
                       {text}
                     </span>

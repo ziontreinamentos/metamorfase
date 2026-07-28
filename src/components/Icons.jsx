@@ -2,7 +2,10 @@ export function MountainIcon({ className = "w-8 h-8" }) {
   return (
     <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden="true">
       <path d="M4 24L12 10L16 16L20 8L28 24H4Z" fill="currentColor" />
-      <circle cx="21" cy="7" r="1.6" fill="var(--color-accent-light)" />
+      <g stroke="var(--color-bg-primary)" strokeWidth="1.3" strokeLinecap="round" fill="none">
+        <circle cx="12.2" cy="12.1" r="1.1" fill="var(--color-bg-primary)" stroke="none" />
+        <path d="M12.2 13.2v2.3M12.2 13.6l-1.7 1.6M12.2 14.4l1.9 1.1M12.2 15.5l-1.3 2M12.2 15.5l1.5 2" />
+      </g>
     </svg>
   );
 }
@@ -52,6 +55,24 @@ export function XIcon({ className = "w-3.5 h-3.5" }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function PlusIcon({ className = "w-5 h-5", open = false }) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      className={`${className} transition-transform duration-300 ${open ? "rotate-45" : ""}`}
+      aria-hidden="true"
+    >
+      <path
+        d="M10 4v12M4 10h12"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
       />
     </svg>
   );

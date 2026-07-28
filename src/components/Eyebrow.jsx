@@ -1,8 +1,7 @@
-export default function Eyebrow({ children, className = "" }) {
+export default function Eyebrow({ children, className = "", light = false }) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <span className="h-px w-10 bg-accent-primary/60" aria-hidden="true" />
-      <span className="eyebrow">{children}</span>
+    <div className={className}>
+      <span className={`eyebrow ${light ? "eyebrow-on-light" : ""}`}>{children}</span>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
-import { ChevronIcon } from "./Icons";
+import { PlusIcon } from "./Icons";
+import TopoTexture from "./TopoTexture";
 
 const faqs = [
   {
@@ -14,7 +15,7 @@ const faqs = [
   },
   {
     q: "Onde vai ser exatamente?",
-    a: "Guararema, interior de São Paulo. O endereço completo e as informações de hospedagem são enviados no grupo exclusivo após sua inscrição.",
+    a: "Guararema, interior de São Paulo. O endereço completo e as informações da região são enviados no grupo exclusivo após sua inscrição, para que você possa organizar sua hospedagem com antecedência.",
   },
   {
     q: "Preciso ir sozinho(a) ou posso levar alguém?",
@@ -26,7 +27,7 @@ const faqs = [
   },
   {
     q: "E se eu me arrepender?",
-    a: "Viva os 3 dias completos. Se ao final não fizer sentido pra você, devolvemos 100% do valor investido, sem burocracia.",
+    a: "Viva os 3 dias completos. Se ao final não fizer sentido pra você, devolvemos 100% do valor da sua inscrição, sem burocracia.",
   },
 ];
 
@@ -44,7 +45,7 @@ function FaqItem({ q, a }) {
         <span className="font-serif text-[18px] font-medium leading-[1.3] text-text-primary md:text-[20px]">
           {q}
         </span>
-        <ChevronIcon open={open} className="h-5 w-5 shrink-0 text-accent-primary" />
+        <PlusIcon open={open} className="mt-1 h-5 w-5 shrink-0 text-accent-primary" />
       </button>
       <div
         className="grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out"
@@ -62,8 +63,9 @@ function FaqItem({ q, a }) {
 
 export default function FAQ() {
   return (
-    <section className="bg-bg-primary py-16 md:py-28">
-      <Container className="max-w-3xl">
+    <section className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative max-w-3xl">
         <Eyebrow>Antes de decidir</Eyebrow>
         <h2 className="mt-6 font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           Perguntas que todo escalador já se fez

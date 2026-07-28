@@ -1,5 +1,6 @@
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
+import TopoTexture from "./TopoTexture";
 
 const steps = [
   {
@@ -21,8 +22,9 @@ const steps = [
 
 export default function Journey() {
   return (
-    <section className="bg-bg-secondary py-16 md:py-28">
-      <Container>
+    <section className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative">
         <Eyebrow>A Jornada</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           É assim que a mudança acontece.
@@ -51,8 +53,11 @@ export default function Journey() {
           ))}
         </div>
 
-        <div className="mt-10 rounded-2xl border border-border-subtle bg-bg-card/60 p-8 text-center md:p-10">
-          <p className="font-serif text-[19px] italic leading-[1.5] text-text-primary md:text-[22px]">
+        <div className="mt-10 rounded-2xl border border-border-highlight bg-gradient-to-b from-bg-card-elevated to-bg-card p-8 md:p-10">
+          <svg viewBox="0 0 16 14" className="h-4 w-4 text-accent-primary" aria-hidden="true">
+            <path d="M8 0L16 14H0L8 0Z" fill="currentColor" />
+          </svg>
+          <p className="mt-4 font-serif text-[19px] leading-[1.5] text-text-primary md:text-[22px]">
             Aqui não existem participantes. Existem{" "}
             <strong className="font-medium not-italic text-accent-primary">
               escaladores

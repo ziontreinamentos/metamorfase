@@ -1,14 +1,25 @@
 import Container from "./Container";
+import mountainBg from "../assets/impact-mountain.jpg";
 
 export default function ImpactStatement() {
   return (
-    <section className="bg-bg-primary py-20 md:py-36">
-      <Container className="max-w-4xl text-center">
+    <section className="relative overflow-hidden bg-bg-primary py-14 md:py-24">
+      <img
+        src={mountainBg}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-bg-primary/45" />
+      <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-bg-primary/20 to-bg-primary/50" />
+
+      <Container className="relative max-w-4xl text-center">
         <h2 className="font-serif text-[30px] font-normal leading-[1.15] text-text-primary md:text-[46px]">
-          Seu potencial nunca foi o problema. Discurso bonito também nunca
-          será a solução.
+          Seu potencial nunca foi o problema.{" "}
+          <em className="italic text-accent-primary">
+            Discurso bonito também nunca será a solução.
+          </em>
         </h2>
-        <p className="mt-8 text-[13px] font-medium tracking-[0.15em] text-text-secondary">
+        <p className="mono-label mt-8 text-[13px] font-medium text-text-secondary">
           — DIEGO CORRÊA
         </p>
       </Container>

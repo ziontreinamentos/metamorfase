@@ -2,12 +2,18 @@ import Container from "./Container";
 import Eyebrow from "./Eyebrow";
 import Button from "./Button";
 import Countdown from "./Countdown";
+import { LogoFull } from "./Logo";
+import TopoTexture from "./TopoTexture";
 
 export default function FinalCTA() {
   return (
-    <section className="bg-bg-secondary py-16 md:py-28">
-      <Container className="max-w-3xl text-center">
+    <section className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative max-w-3xl text-center">
         <div className="flex justify-center">
+          <LogoFull className="h-8" />
+        </div>
+        <div className="mt-4 flex justify-center">
           <Eyebrow>Vagas limitadas: turma de agosto</Eyebrow>
         </div>
         <h2 className="mt-6 font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
@@ -26,7 +32,7 @@ export default function FinalCTA() {
           <Button href="#precos">Quero começar minha escalada →</Button>
         </div>
 
-        <p className="mt-6 text-[13px] font-medium uppercase tracking-[0.1em] text-text-secondary">
+        <p className="mono-label mt-6 text-[13px] uppercase text-text-secondary">
           28 · 29 · 30 de agosto · Guararema, SP
         </p>
       </Container>

@@ -1,14 +1,14 @@
 import Container from "./Container";
 import Button from "./Button";
-import MountainScene from "./MountainScene";
+import heroPhoto from "../assets/hero-photo.jpg";
 
 export default function Hero() {
   return (
     <section id="topo" className="relative flex min-h-[100svh] items-end overflow-hidden bg-bg-primary pb-20 pt-40 md:items-center md:pb-0">
       <div className="absolute inset-0">
-        <MountainScene className="h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/70 to-bg-primary/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/60 via-transparent to-transparent" />
+        <img src={heroPhoto} alt="" className="h-full w-full object-cover object-[68%_center]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary via-bg-primary/70 to-transparent" />
       </div>
 
       <Container className="relative z-10">
@@ -17,8 +17,10 @@ export default function Hero() {
             IMERSÃO PRESENCIAL · 3 DIAS · GUARAREMA/SP
           </p>
           <h1 className="font-serif text-[34px] font-normal leading-[1.08] text-text-primary sm:text-[44px] md:text-[56px] lg:text-[68px]">
-            Existe uma distância entre os resultados que você vive hoje... e
-            os resultados que você realmente seria capaz de construir.
+            Existe uma distância entre os resultados que você vive hoje...{" "}
+            <span className="text-accent-light">
+              e os resultados que você realmente seria capaz de construir.
+            </span>
           </h1>
           <p className="mt-6 max-w-xl text-[16px] leading-[1.6] text-text-secondary md:text-[19px] md:leading-[1.55]">
             Em apenas 3 dias, o Metamorfase ajuda você a identificar o padrão
@@ -31,7 +33,7 @@ export default function Hero() {
               (pill, i) => (
                 <span key={pill} className="flex items-center gap-3">
                   {i > 0 && <span className="text-text-secondary" aria-hidden="true">·</span>}
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[13px] text-text-primary backdrop-blur-sm">
+                  <span className="mono-label rounded-full border border-white/20 bg-white/10 px-4 py-2 text-[12px] uppercase text-text-primary backdrop-blur-sm">
                     {pill}
                   </span>
                 </span>

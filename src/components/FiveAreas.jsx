@@ -1,5 +1,6 @@
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
+import TopoTexture from "./TopoTexture";
 
 const areas = [
   {
@@ -31,8 +32,9 @@ const areas = [
 
 export default function FiveAreas() {
   return (
-    <section className="bg-bg-primary py-16 md:py-28">
-      <Container>
+    <section className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
+      <TopoTexture />
+      <Container className="relative">
         <Eyebrow>As cinco áreas</Eyebrow>
         <h2 className="mt-6 max-w-2xl font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           Toda mudança verdadeira começa na raiz.
@@ -42,11 +44,11 @@ export default function FiveAreas() {
           dinheiro e saúde começam a responder diferente.
         </p>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {areas.map((area) => (
             <div
               key={area.label}
-              className="rounded-2xl border border-border-subtle bg-bg-card p-8"
+              className="min-w-0 rounded-2xl border border-border-subtle bg-bg-card p-8"
             >
               <p className="eyebrow">{area.label}</p>
               <h3 className="mt-4 font-serif text-[22px] font-medium leading-[1.2] text-text-primary md:text-[24px]">
