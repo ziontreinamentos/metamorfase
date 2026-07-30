@@ -7,27 +7,27 @@ import TopoTexture from "./TopoTexture";
 const faqs = [
   {
     q: "Vale a pena parar três dias?",
-    a: "A pergunta não é se você consegue parar três dias. É quanto custa continuar repetindo os mesmos resultados pelos próximos anos.",
+    a: "Centenas de escaladores já responderam essa pergunta com a própria vida depois da imersão: em relacionamento, dinheiro, carreira, espiritualidade e saúde. Mas talvez a pergunta mais importante seja outra: quanto custa não ir? Se o padrão que trava você hoje continuar intacto, os próximos 10 anos podem ser exatamente iguais aos últimos 10.",
   },
   {
     q: "Já fiz um evento parecido e não funcionou.",
-    a: "O mercado queimou muita gente com promessas rasas. O Metamorfase nasceu dessa insatisfação: não é mais do mesmo. Quem já viveu outras imersões costuma dizer que nunca tinha visto uma profundidade assim.",
+    a: "A diferença é estrutura: 35+ dinâmicas guiadas pela metodologia ILP, sem venda constante durante o evento.",
   },
   {
     q: "Onde vai ser exatamente?",
-    a: "Guararema, interior de São Paulo. O endereço completo e as informações da região são enviados no grupo exclusivo após sua inscrição, para que você possa organizar sua hospedagem com antecedência.",
+    a: "Guararema, SP. Endereço completo enviado após inscrição.",
   },
   {
-    q: "Preciso ir sozinho(a) ou posso levar alguém?",
-    a: "Os dois formatos existem: escalada individual ou em dupla, ideal para quem quer atravessar essa jornada ao lado de alguém.",
+    q: "Preciso ir sozinho(a)?",
+    a: "Individual ou em dupla, como preferir.",
   },
   {
     q: "Preciso já ter feito outro evento antes pra participar?",
-    a: "Não. O Metamorfase pode ser seu primeiro passo presencial ou a continuidade de um processo que você já começou.",
+    a: "Não é pré-requisito. O Metamorfase foi feito tanto pra quem já está em busca de desenvolvimento pessoal há um tempo quanto pra quem está iniciando agora. O que importa é estar pronto pra viver o processo, não ter currículo de eventos anteriores.",
   },
   {
     q: "E se eu me arrepender?",
-    a: "Viva os 3 dias completos. Se ao final não fizer sentido pra você, devolvemos 100% do valor da sua inscrição, sem burocracia.",
+    a: "Garantia incondicional: 100% do valor devolvido, sem burocracia.",
   },
 ];
 

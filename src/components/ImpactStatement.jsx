@@ -3,7 +3,7 @@ import mountainBg from "../assets/impact-mountain.jpg";
 
 export default function ImpactStatement() {
   return (
-    <section className="relative overflow-hidden bg-bg-primary py-14 md:py-24">
+    <section className="relative overflow-hidden bg-bg-primary py-16 md:py-32">
       <img
         src={mountainBg}
         alt=""
@@ -14,9 +14,9 @@ export default function ImpactStatement() {
 
       <Container className="relative max-w-4xl text-center">
         <h2 className="font-serif text-[30px] font-normal leading-[1.15] text-text-primary md:text-[46px]">
-          Seu potencial nunca foi o problema.{" "}
+          Chega de ser a pessoa que "tinha tudo para dar certo".{" "}
           <em className="italic text-accent-primary">
-            Discurso bonito também nunca será a solução.
+            Pare de ser um potencial. Viva o que você merece.
           </em>
         </h2>
         <p className="mono-label mt-8 text-[13px] font-medium text-text-secondary">

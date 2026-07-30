@@ -22,7 +22,7 @@ const steps = [
 
 export default function Guarantee() {
   return (
-    <section className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
+    <section className="relative overflow-hidden bg-bg-primary py-16 md:py-28">
       <TopoTexture />
       <Container className="relative max-w-3xl">
         <div className="relative overflow-hidden rounded-2xl border border-border-highlight bg-bg-card-elevated p-8 shadow-[0_0_40px_#e8823c26] md:p-14">
@@ -47,9 +47,8 @@ export default function Guarantee() {
           </h2>
 
           <p className="relative mt-6 text-[16px] leading-[1.6] text-text-secondary md:text-[18px]">
-            Viva os 3 dias completos. Cada dinâmica, cada exercício, cada
-            conversa. Se ao final não fizer sentido, devolvemos 100% do valor
-            da sua inscrição. Sem burocracia. Sem perguntas.
+            Viva os 3 dias completos. Se ao final não fizer sentido,
+            devolvemos 100% do valor. Sem burocracia. Sem perguntas.
           </p>
 
           <div className="relative mt-10 grid gap-8 border-t border-border-subtle pt-10 md:grid-cols-3">

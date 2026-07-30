@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import IntroVideo from "./components/IntroVideo";
 import Diagnosis from "./components/Diagnosis";
 import WhyExists from "./components/WhyExists";
+import AboutLuana from "./components/AboutLuana";
+import AboutDiego from "./components/AboutDiego";
 import ImpactStatement from "./components/ImpactStatement";
 import FiveAreas from "./components/FiveAreas";
 import Journey from "./components/Journey";
@@ -24,6 +26,8 @@ function App() {
         <IntroVideo />
         <Diagnosis />
         <WhyExists />
+        <AboutDiego />
+        <AboutLuana />
         <ImpactStatement />
         <FiveAreas />
         <Journey />

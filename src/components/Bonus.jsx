@@ -5,7 +5,7 @@ import TopoTexture from "./TopoTexture";
 const bonuses = [
   {
     title: "Encontro de Retorno",
-    text: "7 dias após a imersão, um encontro pra tirar dúvidas e manter a proximidade com o processo.",
+    text: "7 dias após a imersão.",
   },
   {
     title: "2 vagas: Saia da Cela",
@@ -13,11 +13,11 @@ const bonuses = [
   },
   {
     title: "Curso Agenda Fácil",
-    text: "Vença a procrastinação e organize sua produtividade de verdade.",
+    text: "Vença a procrastinação.",
   },
   {
     title: "Hipnose Guiada: 12 áudios",
-    text: "Programação diária da mente: relacionamento, ansiedade, produtividade, sono, emagrecimento e mais.",
+    text: "Relacionamento, ansiedade, sono e produtividade.",
   },
 ];
 

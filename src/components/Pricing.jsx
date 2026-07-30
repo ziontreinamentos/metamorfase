@@ -11,6 +11,7 @@ const plans = [
     oldPrice: "De R$ 5.997",
     installment: "12x de",
     price: "R$ 297",
+    cashPrice: "ou R$ 2.997 à vista",
     features: [
       "3 dias completos de imersão",
       "Mais de 35 dinâmicas práticas",
@@ -18,6 +19,7 @@ const plans = [
       "Encontro de retorno 7 dias após o evento",
     ],
     cta: "Quero começar minha escalada →",
+    link: "https://pay.kiwify.com.br/D6KXVq8",
     highlighted: false,
     checkColor: "text-semantic-positive",
   },
@@ -28,6 +30,7 @@ const plans = [
     oldPrice: "De R$ 11.997",
     installment: "12x de",
     price: "R$ 497",
+    cashPrice: "ou R$ 4.997 à vista",
     features: [
       "2 vagas: leve quem também precisa escalar com você",
       "Mais de 35 dinâmicas práticas para os dois",
@@ -35,6 +38,7 @@ const plans = [
       "Encontro de retorno 7 dias após o evento",
     ],
     cta: "Escalar em dupla →",
+    link: "https://pay.kiwify.com.br/B4Te3lV",
     highlighted: true,
     checkColor: "text-accent-primary",
   },
@@ -42,7 +46,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="precos" className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
+    <section id="precos" className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
       <TopoTexture />
       <Container className="relative">
         <Eyebrow>Sua vaga na escalada</Eyebrow>
@@ -79,6 +83,7 @@ export default function Pricing() {
               </h3>
 
               <div className="mt-6">
+                {/* ⚠️ CONFIRMAR: valor cheio abaixo é real e verificável? Se não, remover a linha riscada e mostrar só o valor final. */}
                 <p className="mono-label text-[13px] text-text-muted line-through">
                   {plan.oldPrice}
                 </p>
@@ -89,6 +94,9 @@ export default function Pricing() {
                   <span className="font-serif text-[32px] font-medium text-cta-green [text-shadow:0_0_20px_rgba(47,191,109,0.55)] md:text-[36px]">
                     {plan.price}
                   </span>
+                </p>
+                <p className="mono-label mt-1 text-[13px] text-text-secondary">
+                  {plan.cashPrice}
                 </p>
               </div>
 
@@ -103,7 +111,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <Button href="#precos" className="mt-10 w-full">
+              <Button href={plan.link} className="mt-10 w-full">
                 {plan.cta}
               </Button>
             </div>

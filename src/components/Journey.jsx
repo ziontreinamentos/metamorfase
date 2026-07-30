@@ -1,22 +1,26 @@
 import Container from "./Container";
 import Eyebrow from "./Eyebrow";
 import TopoTexture from "./TopoTexture";
+import { SearchIcon, BrokenChainIcon, FlagIcon } from "./Icons";
 
 const steps = [
   {
     number: "01",
-    title: "Você identifica.",
-    text: "Você enxerga com clareza o padrão invisível que continua produzindo os mesmos resultados.",
+    title: "Identificação.",
+    text: "Você enxerga com clareza o Padrão de Teto que continua produzindo os mesmos resultados.",
+    Icon: SearchIcon,
   },
   {
     number: "02",
-    title: "Você rompe.",
+    title: "Liberação.",
     text: "Mais de 35 dinâmicas vivenciais para você não ouvir sobre mudança: viver ela no corpo.",
+    Icon: BrokenChainIcon,
   },
   {
     number: "03",
-    title: "Você constrói.",
-    text: "Você sai com uma nova direção construída, não com insight solto pra desmotivar na semana seguinte.",
+    title: "Planejamento.",
+    text: "Você sai com uma nova direção construída, não com insight solto pra desmotivar na segunda-feira.",
+    Icon: FlagIcon,
   },
 ];
 
@@ -40,9 +44,12 @@ export default function Journey() {
               key={step.number}
               className="rounded-2xl border border-border-subtle bg-bg-card p-8 md:p-10"
             >
-              <span className="font-serif text-[48px] leading-none text-accent-primary md:text-[56px]">
-                {step.number}
-              </span>
+              <div className="flex items-center justify-between">
+                <span className="font-serif text-[48px] leading-none text-accent-primary md:text-[56px]">
+                  {step.number}
+                </span>
+                <step.Icon className="h-6 w-6 text-accent-primary/60" />
+              </div>
               <h3 className="mt-6 font-serif text-[24px] font-medium leading-[1.2] text-text-primary">
                 {step.title}
               </h3>
