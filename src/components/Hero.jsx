@@ -46,10 +46,9 @@ export default function Hero() {
         </div>
 
         <div className="bg-bg-primary px-6 pb-16 pt-8">
-          <div className="mb-6 flex items-start gap-3">
-            <span className="mt-[7px] h-px w-8 shrink-0 bg-accent-primary/50" aria-hidden="true" />
-            <p className="eyebrow leading-snug">IMERSÃO PRESENCIAL DE INTELIGÊNCIA EMOCIONAL</p>
-          </div>
+          <p className="eyebrow mb-6 leading-snug">
+            IMERSÃO PRESENCIAL DE INTELIGÊNCIA EMOCIONAL
+          </p>
           <h1 className="font-serif text-[34px] font-normal leading-[1.08] text-text-primary sm:text-[44px]">
             Enquanto você lê isso, alguém que começou depois de você{" "}
             <span className="text-accent-light">já passou na frente.</span>
@@ -84,10 +83,7 @@ export default function Hero() {
 
         <Container className="relative z-10">
           <div className="max-w-3xl">
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-accent-primary/50" aria-hidden="true" />
-              <p className="eyebrow">IMERSÃO PRESENCIAL DE INTELIGÊNCIA EMOCIONAL</p>
-            </div>
+            <p className="eyebrow mb-6">IMERSÃO PRESENCIAL DE INTELIGÊNCIA EMOCIONAL</p>
             <h1 className="font-serif text-[34px] font-normal leading-[1.08] text-text-primary sm:text-[44px] md:text-[56px] lg:text-[68px]">
               Enquanto você lê isso, alguém que começou depois de você{" "}
               <span className="text-accent-light">já passou na frente.</span>
