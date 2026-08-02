@@ -54,8 +54,8 @@ export default function Hero() {
             <span className="text-accent-light">já passou na frente.</span>
           </h1>
           <p className="mt-6 text-[16px] leading-[1.6] text-text-secondary">
-            Descubra, nos próximos 3 dias, o que trava você e saia com um
-            plano pra não voltar pro mesmo lugar.
+            Não é talento. Essa pessoa já descobriu o que trava ela e
+            resolveu em 3 dias. Você ainda não.
           </p>
 
           <Pills />
@@ -89,8 +89,8 @@ export default function Hero() {
               <span className="text-accent-light">já passou na frente.</span>
             </h1>
             <p className="mt-6 max-w-xl text-[16px] leading-[1.6] text-text-secondary md:text-[19px] md:leading-[1.55]">
-              Descubra, nos próximos 3 dias, o que trava você e saia com um
-              plano pra não voltar pro mesmo lugar.
+              Não é talento. Essa pessoa já descobriu o que trava ela e
+              resolveu em 3 dias. Você ainda não.
             </p>
 
             <Pills />
