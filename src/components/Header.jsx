@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Container from "./Container";
 import Button from "./Button";
 import { LogoFull } from "./Logo";
+import { WHATSAPP_LINK } from "../whatsapp";
 
-export default function Header() {
+export default function Header({ variant = "checkout" }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -22,9 +23,15 @@ export default function Header() {
         <a href="#topo" className="flex items-center">
           <LogoFull className="h-8 md:h-9" />
         </a>
-        <Button href="#precos" size="sm">
-          Garantir vaga
-        </Button>
+        {variant === "whatsapp" ? (
+          <Button href={WHATSAPP_LINK} size="sm">
+            Falar com a equipe
+          </Button>
+        ) : (
+          <Button href="#precos" size="sm">
+            Garantir vaga
+          </Button>
+        )}
       </Container>
     </header>
   );

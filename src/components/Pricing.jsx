@@ -3,6 +3,7 @@ import Eyebrow from "./Eyebrow";
 import Button from "./Button";
 import { CheckIcon } from "./Icons";
 import TopoTexture from "./TopoTexture";
+import { WHATSAPP_LINK } from "../whatsapp";
 
 const plans = [
   {
@@ -44,7 +45,9 @@ const plans = [
   },
 ];
 
-export default function Pricing() {
+export default function Pricing({ variant = "checkout" }) {
+  const showPrices = variant !== "whatsapp";
+
   return (
     <section id="precos" className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
       <TopoTexture />
@@ -82,23 +85,25 @@ export default function Pricing() {
                 {plan.title}
               </h3>
 
-              <div className="mt-6">
-                {/* ⚠️ CONFIRMAR: valor cheio abaixo é real e verificável? Se não, remover a linha riscada e mostrar só o valor final. */}
-                <p className="mono-label text-[13px] text-text-muted line-through">
-                  {plan.oldPrice}
-                </p>
-                <p className="mt-1 flex items-baseline gap-3">
-                  <span className="mono-label text-[13px] uppercase text-text-secondary">
-                    {plan.installment}
-                  </span>
-                  <span className="font-serif text-[32px] font-medium text-cta-green [text-shadow:0_0_20px_rgba(47,191,109,0.55)] md:text-[36px]">
-                    {plan.price}
-                  </span>
-                </p>
-                <p className="mono-label mt-1 text-[13px] text-text-secondary">
-                  {plan.cashPrice}
-                </p>
-              </div>
+              {showPrices && (
+                <div className="mt-6">
+                  {/* ⚠️ CONFIRMAR: valor cheio abaixo é real e verificável? Se não, remover a linha riscada e mostrar só o valor final. */}
+                  <p className="mono-label text-[13px] text-text-muted line-through">
+                    {plan.oldPrice}
+                  </p>
+                  <p className="mt-1 flex items-baseline gap-3">
+                    <span className="mono-label text-[13px] uppercase text-text-secondary">
+                      {plan.installment}
+                    </span>
+                    <span className="font-serif text-[32px] font-medium text-cta-green [text-shadow:0_0_20px_rgba(47,191,109,0.55)] md:text-[36px]">
+                      {plan.price}
+                    </span>
+                  </p>
+                  <p className="mono-label mt-1 text-[13px] text-text-secondary">
+                    {plan.cashPrice}
+                  </p>
+                </div>
+              )}
 
               <ul className="mt-8 space-y-4">
                 {plan.features.map((text) => (
@@ -111,7 +116,10 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <Button href={plan.link} className="mt-10 w-full">
+              <Button
+                href={showPrices ? plan.link : WHATSAPP_LINK}
+                className="mt-10 w-full"
+              >
                 {plan.cta}
               </Button>
             </div>

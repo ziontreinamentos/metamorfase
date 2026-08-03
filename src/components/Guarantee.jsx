@@ -2,25 +2,32 @@ import Container from "./Container";
 import { CheckIcon } from "./Icons";
 import TopoTexture from "./TopoTexture";
 
-const steps = [
-  {
-    number: "01",
-    label: "Você entra",
-    text: "Você paga o valor da sua inscrição.",
-  },
-  {
-    number: "02",
-    label: "Você vive",
-    text: "Os 3 dias completos, com todas as dinâmicas e todo o material.",
-  },
-  {
-    number: "03",
-    label: "Você decide",
-    text: "Não fez sentido? Fala com a gente e devolvemos o valor da sua inscrição. Sem burocracia.",
-  },
-];
+function getSteps(variant) {
+  return [
+    {
+      number: "01",
+      label: "Você entra",
+      text:
+        variant === "whatsapp"
+          ? "Você garante sua vaga."
+          : "Você paga o valor da sua inscrição.",
+    },
+    {
+      number: "02",
+      label: "Você vive",
+      text: "Os 3 dias completos, com todas as dinâmicas e todo o material.",
+    },
+    {
+      number: "03",
+      label: "Você decide",
+      text: "Não fez sentido? Fala com a gente e devolvemos o valor da sua inscrição. Sem burocracia.",
+    },
+  ];
+}
 
-export default function Guarantee() {
+export default function Guarantee({ variant = "checkout" }) {
+  const steps = getSteps(variant);
+
   return (
     <section className="relative overflow-hidden bg-bg-primary py-16 md:py-28">
       <TopoTexture />

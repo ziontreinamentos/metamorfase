@@ -1,6 +1,7 @@
 import Container from "./Container";
 import Button from "./Button";
 import heroPhoto from "../assets/hero-photo.jpg";
+import { WHATSAPP_LINK } from "../whatsapp";
 
 const pills = ["28, 29 e 30 de agosto", "Guararema, SP", "Vagas limitadas"];
 
@@ -23,7 +24,9 @@ function Pills() {
   );
 }
 
-export default function Hero() {
+export default function Hero({ variant = "checkout" }) {
+  const ctaHref = variant === "whatsapp" ? WHATSAPP_LINK : "#precos";
+
   return (
     <section id="topo" className="relative overflow-hidden bg-bg-primary">
       {/* Mobile: photo banner (no text overlay) + solid content block below */}
@@ -61,7 +64,7 @@ export default function Hero() {
           <Pills />
 
           <div className="mt-10">
-            <Button href="#precos">Quero começar minha escalada →</Button>
+            <Button href={ctaHref}>Quero começar minha escalada →</Button>
           </div>
         </div>
       </div>
@@ -96,7 +99,7 @@ export default function Hero() {
             <Pills />
 
             <div className="mt-10">
-              <Button href="#precos">Quero começar minha escalada →</Button>
+              <Button href={ctaHref}>Quero começar minha escalada →</Button>
             </div>
           </div>
         </Container>

@@ -4,10 +4,13 @@ import Button from "./Button";
 import Countdown from "./Countdown";
 import { LogoFull } from "./Logo";
 import TopoTexture from "./TopoTexture";
+import { WHATSAPP_LINK } from "../whatsapp";
 
-export default function FinalCTA() {
+export default function FinalCTA({ variant = "checkout" }) {
+  const ctaHref = variant === "whatsapp" ? WHATSAPP_LINK : "#precos";
+
   return (
-    <section className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
+    <section id="cta-final" className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
       <TopoTexture />
       <Container className="relative max-w-3xl text-center">
         <div className="flex justify-center">
@@ -29,7 +32,7 @@ export default function FinalCTA() {
         </div>
 
         <div className="mt-12">
-          <Button href="#precos">Quero começar minha escalada →</Button>
+          <Button href={ctaHref}>Quero começar minha escalada →</Button>
         </div>
 
         <p className="mono-label mt-6 text-[13px] uppercase text-text-secondary">
