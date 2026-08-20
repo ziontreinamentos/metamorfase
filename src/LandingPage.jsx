@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import IntroVideo from "./components/IntroVideo";
@@ -17,8 +18,20 @@ import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 import WhatsAppFloatButton from "./components/WhatsAppFloatButton";
+import { sendEvent } from "./lib/tracking";
+
+// Um único PageView por carregamento, mesmo com o duplo-efeito do StrictMode.
+// Ele sai por aqui (e não pelo snippet do <head>) para ir também ao relay:
+// se o navegador bloquear o Pixel, o evento ainda chega pela API.
+let pageViewSent = false;
 
 export default function LandingPage({ variant = "checkout" }) {
+  useEffect(() => {
+    if (pageViewSent) return;
+    pageViewSent = true;
+    sendEvent("PageView");
+  }, []);
+
   return (
     <div className="min-h-screen bg-bg-primary">
       <Header variant={variant} />

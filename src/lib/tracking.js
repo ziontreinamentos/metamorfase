@@ -27,8 +27,13 @@ export function sendEvent(eventName, gaEvent) {
   var fbc = getCookie('_fbc');
   if (!fbc && fbclid) { fbc = 'fb.1.' + Date.now() + '.' + fbclid; setCookie('_fbc', fbc, 90); }
 
+  // O client_id do GA vive no cookie _ga no formato "GA1.1.<client_id>".
+  // Lemos dali porque é síncrono: o callback do gtag('get', ...) só resolve
+  // depois que o payload abaixo já foi montado, e o relay descarta o envio
+  // ao GA4 quando este campo chega vazio.
   var gaCid = '';
-  if (window.gtag) { try { window.gtag('get', 'G-1ZYVLE73BY', 'client_id', function (id) { gaCid = id || ''; }); } catch (e) {} }
+  var gaCookie = getCookie('_ga').match(/^GA\d+\.\d+\.(.+)$/);
+  if (gaCookie) gaCid = gaCookie[1];
 
   var eventId = uuid();
   var cleanUrl = window.location.origin + window.location.pathname;
