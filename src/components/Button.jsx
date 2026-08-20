@@ -1,4 +1,6 @@
 import { ArrowRightIcon } from "./Icons";
+import { isWhatsAppLink } from "../whatsapp";
+import { sendEvent } from "../lib/tracking";
 
 export default function Button({
   children,
@@ -14,9 +16,14 @@ export default function Button({
 
   const isExternal = href.startsWith("http");
 
+  const onClick = isWhatsAppLink(href)
+    ? () => sendEvent("Contact", "contact")
+    : undefined;
+
   return (
     <a
       href={href}
+      onClick={onClick}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
       className={`inline-flex items-center justify-center gap-2 rounded-full bg-cta-green font-semibold text-cta-text transition-all duration-200 hover:scale-[1.02] hover:bg-cta-green-hover ${sizeClasses} ${className}`}

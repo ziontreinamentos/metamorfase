@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { WhatsAppIcon } from "./Icons";
 import { WHATSAPP_LINK } from "../whatsapp";
+import { sendEvent } from "../lib/tracking";
 
 const COLLAPSE_NEAR_IDS = ["precos", "cta-final"];
 
@@ -34,6 +35,7 @@ export default function WhatsAppFloatButton() {
   return (
     <a
       href={WHATSAPP_LINK}
+      onClick={() => sendEvent("Contact", "contact")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com a equipe pelo WhatsApp"
