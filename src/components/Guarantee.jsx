@@ -8,9 +8,11 @@ function getSteps(variant) {
       number: "01",
       label: "Você entra",
       text:
-        variant === "whatsapp"
-          ? "Você garante sua vaga."
-          : "Você paga o valor da sua inscrição.",
+        variant === "waitlist"
+          ? "Você garante sua vaga na lista."
+          : variant === "whatsapp"
+            ? "Você garante sua vaga."
+            : "Você paga o valor da sua inscrição.",
     },
     {
       number: "02",

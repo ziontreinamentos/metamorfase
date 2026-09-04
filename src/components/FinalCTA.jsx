@@ -5,8 +5,10 @@ import Countdown from "./Countdown";
 import { LogoFull } from "./Logo";
 import TopoTexture from "./TopoTexture";
 import { WHATSAPP_LINK } from "../whatsapp";
+import WaitlistForm from "./WaitlistForm";
 
 export default function FinalCTA({ variant = "checkout" }) {
+  const isWaitlist = variant === "waitlist";
   const ctaHref = variant === "whatsapp" ? WHATSAPP_LINK : "#precos";
 
   return (
@@ -17,7 +19,9 @@ export default function FinalCTA({ variant = "checkout" }) {
           <LogoFull className="h-8" />
         </div>
         <div className="mt-4 flex justify-center">
-          <Eyebrow>Vagas limitadas: turma de agosto</Eyebrow>
+          <Eyebrow>
+            {isWaitlist ? "Lista de espera: próxima turma" : "Vagas limitadas: turma de agosto"}
+          </Eyebrow>
         </div>
         <h2 className="mt-6 font-serif text-[28px] font-normal leading-[1.15] text-text-primary md:text-[42px]">
           Daqui a dez anos, você vai lembrar destes três dias.
@@ -27,17 +31,30 @@ export default function FinalCTA({ variant = "checkout" }) {
           e começou uma nova direção pra sua vida.
         </p>
 
-        <div className="mt-12">
-          <Countdown />
-        </div>
+        {isWaitlist ? (
+          <>
+            <p className="mt-8 text-[16px] leading-[1.6] text-text-secondary md:text-[18px]">
+              Você será avisado(a) assim que a próxima data for confirmada.
+            </p>
+            <div id="lista-espera" className="mt-12 scroll-mt-28">
+              <WaitlistForm />
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="mt-12">
+              <Countdown />
+            </div>
 
-        <div className="mt-12">
-          <Button href={ctaHref}>Quero começar minha escalada →</Button>
-        </div>
+            <div className="mt-12">
+              <Button href={ctaHref}>Quero começar minha escalada →</Button>
+            </div>
 
-        <p className="mono-label mt-6 text-[13px] uppercase text-text-secondary">
-          28 · 29 · 30 de agosto · Guararema, SP
-        </p>
+            <p className="mono-label mt-6 text-[13px] uppercase text-text-secondary">
+              28 · 29 · 30 de agosto · Guararema, SP
+            </p>
+          </>
+        )}
       </Container>
     </section>
   );

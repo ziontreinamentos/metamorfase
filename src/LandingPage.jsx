@@ -50,7 +50,7 @@ export default function LandingPage({ variant = "checkout" }) {
         <Pricing variant={variant} />
         <Bonus />
         <Guarantee variant={variant} />
-        <FAQ />
+        <FAQ variant={variant} />
         <FinalCTA variant={variant} />
       </main>
       <Footer />

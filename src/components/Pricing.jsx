@@ -46,7 +46,8 @@ const plans = [
 ];
 
 export default function Pricing({ variant = "checkout" }) {
-  const showPrices = variant !== "whatsapp";
+  const isWaitlist = variant === "waitlist";
+  const showPrices = variant === "checkout";
 
   return (
     <section id="precos" className="relative overflow-hidden bg-bg-secondary py-12 md:py-20">
@@ -58,8 +59,9 @@ export default function Pricing({ variant = "checkout" }) {
           <em className="italic text-accent-primary">decidir começar</em>.
         </h2>
         <p className="mt-6 max-w-2xl text-[16px] leading-[1.6] text-text-secondary md:text-[18px]">
-          28, 29 e 30 de agosto · Guararema, SP. Lote de lançamento, com vagas
-          limitadas a um grupo pequeno.
+          {isWaitlist
+            ? "A turma de agosto foi encerrada. Entre na lista de espera e você será avisado(a) em primeiro lugar quando a próxima data for confirmada."
+            : "28, 29 e 30 de agosto · Guararema, SP. Lote de lançamento, com vagas limitadas a um grupo pequeno."}
         </p>
 
         <div className="mt-14 grid gap-8 md:grid-cols-2">
@@ -117,10 +119,16 @@ export default function Pricing({ variant = "checkout" }) {
               </ul>
 
               <Button
-                href={showPrices ? plan.link : WHATSAPP_LINK}
+                href={
+                  isWaitlist
+                    ? "#lista-espera"
+                    : showPrices
+                      ? plan.link
+                      : WHATSAPP_LINK
+                }
                 className="mt-10 w-full"
               >
-                {plan.cta}
+                {isWaitlist ? "Entrar na lista de espera" : plan.cta}
               </Button>
             </div>
           ))}

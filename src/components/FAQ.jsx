@@ -4,6 +4,11 @@ import Eyebrow from "./Eyebrow";
 import { PlusIcon } from "./Icons";
 import TopoTexture from "./TopoTexture";
 
+// Só a resposta sobre local muda na lista de espera: ela pressupõe uma turma
+// com data confirmada, o que não é o caso enquanto a próxima não é anunciada.
+const RESPOSTA_LOCAL_LISTA =
+  "As edições acontecem em Guararema, SP. A próxima data e o endereço completo serão anunciados primeiro para quem estiver na lista de espera.";
+
 const faqs = [
   {
     q: "Vale a pena parar três dias?",
@@ -61,7 +66,13 @@ function FaqItem({ q, a }) {
   );
 }
 
-export default function FAQ() {
+export default function FAQ({ variant = "checkout" }) {
+  const lista = faqs.map((faq) =>
+    variant === "waitlist" && faq.q === "Onde vai ser exatamente?"
+      ? { ...faq, a: RESPOSTA_LOCAL_LISTA }
+      : faq,
+  );
+
   return (
     <section className="relative overflow-hidden bg-bg-primary py-12 md:py-20">
       <TopoTexture />
@@ -72,7 +83,7 @@ export default function FAQ() {
         </h2>
 
         <div className="mt-10">
-          {faqs.map((faq) => (
+          {lista.map((faq) => (
             <FaqItem key={faq.q} {...faq} />
           ))}
         </div>

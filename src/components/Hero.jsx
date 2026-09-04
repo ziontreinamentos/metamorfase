@@ -3,9 +3,10 @@ import Button from "./Button";
 import heroPhoto from "../assets/hero-photo.jpg";
 import { WHATSAPP_LINK } from "../whatsapp";
 
-const pills = ["28, 29 e 30 de agosto", "Guararema, SP", "Vagas limitadas"];
+const PILLS_TURMA = ["28, 29 e 30 de agosto", "Guararema, SP", "Vagas limitadas"];
+const PILLS_LISTA = ["Turma de agosto encerrada", "Próxima turma em breve"];
 
-function Pills() {
+function Pills({ pills }) {
   return (
     <div className="mt-8 flex flex-wrap items-center gap-3">
       {pills.map((pill, i) => (
@@ -25,7 +26,13 @@ function Pills() {
 }
 
 export default function Hero({ variant = "checkout" }) {
-  const ctaHref = variant === "whatsapp" ? WHATSAPP_LINK : "#precos";
+  const isWaitlist = variant === "waitlist";
+  const ctaHref = isWaitlist
+    ? "#lista-espera"
+    : variant === "whatsapp"
+      ? WHATSAPP_LINK
+      : "#precos";
+  const pills = isWaitlist ? PILLS_LISTA : PILLS_TURMA;
 
   return (
     <section id="topo" className="relative overflow-hidden bg-bg-primary">
@@ -61,7 +68,7 @@ export default function Hero({ variant = "checkout" }) {
             resolveu em 3 dias. Você ainda não.
           </p>
 
-          <Pills />
+          <Pills pills={pills} />
 
           <div className="mt-10">
             <Button href={ctaHref}>Quero começar minha escalada →</Button>
@@ -96,7 +103,7 @@ export default function Hero({ variant = "checkout" }) {
               resolveu em 3 dias. Você ainda não.
             </p>
 
-            <Pills />
+            <Pills pills={pills} />
 
             <div className="mt-10">
               <Button href={ctaHref}>Quero começar minha escalada →</Button>

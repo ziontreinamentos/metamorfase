@@ -23,7 +23,11 @@ export default function Header({ variant = "checkout" }) {
         <a href="#topo" className="flex items-center">
           <LogoFull className="h-8 md:h-9" />
         </a>
-        {variant === "whatsapp" ? (
+        {variant === "waitlist" ? (
+          <Button href="#lista-espera" size="sm">
+            Entrar na lista
+          </Button>
+        ) : variant === "whatsapp" ? (
           <Button href={WHATSAPP_LINK} size="sm">
             Falar com a equipe
           </Button>
